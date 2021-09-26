@@ -1,0 +1,23 @@
+:host {
+  color: aliceblue;
+}
+
+.start-class {
+  margin-bottom: 30px;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+mat-expansion-panel {
+  margin : 30px 0;
+}
+mat-form-field {
+  width: 90%;
+
+}
+.email-wala-class {
+  width: 100%;
+}
+.error-wala-class {
+  text-align: center;
+}

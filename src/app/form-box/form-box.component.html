@@ -1,0 +1,36 @@
+<div class="start-class">
+  <mat-accordion [multi]="true">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Email ID </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field class="email-wala-class" appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          [formControl]="email"
+          required
+        />
+        <mat-error *ngIf="email.invalid">{{
+          getEmailErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        Select Your Services
+      </mat-expansion-panel-header>
+
+      <mat-selection-list #cs (selectionChange)="onChange(cs)">
+        <mat-list-option *ngFor="let choice of comps" [value]="choice">
+          {{ choice }}
+        </mat-list-option>
+        <mat-error class="error-wala-class" *ngIf="selectedChoices.length==0">You Must Select Atleast 1 Service</mat-error>
+      </mat-selection-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="error-wala-class" style="margin-bottom: 2rem;">
+  <button  mat-raised-button color="warn">Submit</button>
+</div>
